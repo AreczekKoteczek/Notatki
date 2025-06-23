@@ -18,4 +18,6 @@ openssl passwd newpasswordhere
 nano /etc/passwd
 su root
 
+unshadow passwd shadow > unshadowed
+
 hashcat -m 13100 -a 0 hash.txt /usr/share/wordlists/rockyou.txt --force
