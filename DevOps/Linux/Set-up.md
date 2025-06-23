@@ -7,6 +7,10 @@
 ## Install Tools
 ``` bash copy
 #!/bin/bash
+# gpg key fix
+sudo wget https://archive.kali.org/archive-keyring.gpg -O /usr/share/keyrings/kali-archive-keyring.gpg
+sudo apt update
+
 sudo apt install flatpak plasma-discover-backend-flatpak plasma-discover keepassxc libreoffice libreoffice-kf5 -y
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo -y
 flatpak install flathub dev.vencord.Vesktop -y

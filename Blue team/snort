@@ -1,9 +1,0 @@
-sudo snort -v -l .
-sudo snort -r snort.log.1672414629 -X | grep :22
-sudo snort -r snort.log.1672414629 -X | grep "ssh"
-sudo snort -r snort.log.1672414629 -X -n 30
-
-sudo gedit /etc/snort/rules/local.rules
-drop tcp any 22 <> any any (msg:"SSH Connection attempted"; sid:100001; rev:1;)
-
-sudo snort -c /etc/snort/snort.conf -q -Q --daq afpacket -i eth0:eth1 -A full
