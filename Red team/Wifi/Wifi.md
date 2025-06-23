@@ -1,0 +1,1 @@
+.\hashcat.exe -m 22000 -a 0 -o umowa.txt --status --status-timer=300 .\149688_1750160072.hc22000 .\weakpass_4a.policy.txt
