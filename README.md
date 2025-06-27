@@ -4,11 +4,14 @@ Cybersecurity study notes by discipline:
 - Red-team
 - DevOps
 - CTF
+- PDF
 ## Blue team
-here will be descriptions of the tools typical of the blue team
+Here will be descriptions of the tools typical of the blue team
 ## Red team
-this folder contains notes for the red team
+This folder contains notes for the red team
 ## DevOps
-here are the configuration instructions for the environments I work in
+Here are the configuration instructions for the environments I work in
 ## CTF
-this folder contains writeups from the ctf
+This folder contains writeups from the ctf
+## PDF
+Here are some useful files I have found
