@@ -151,3 +151,36 @@ systemctl restart kibana.service
 
 ### Login to Kibana
 - **Credentials**: Use `elastic:pezasdMYAjh8BCrXFDgX` (replace with the actual password generated during installation).
+
+## Logstash Configuration
+Configuration for processing log files in Logstash
+### /etc/logstash/conf.d/(any_name).conf
+```conf copy
+input {
+    file {
+        path => "/home/Desktop/web_attacks.csv"
+        start_position => "beginning"
+        sincedb_path => "/dev/null"
+    }
+}
+filter {
+    csv {
+        separator => ","
+        columns => ["timestamp", "ip_address", "request", "referrer", "user_agent", "attack_type"]
+    }
+    if [attack_type] =~ /SQL Injection|Brute Force/ {
+    # Perform any necessary actions for the filtered logs
+}
+}
+output {
+    file {
+        path => "/home/Desktop/updated-web-attacks.csv"
+    }
+}
+```
+- **input**: Configures Logstash to read data from a CSV file.
+- **filter**: Parses the CSV file into structured fields.
+- **note**: Filters logs for specific attack types (SQL Injection or Brute Force).
+- `[attack_type] =~ /SQL Injection|Brute Force/`: Matches logs where `attack_type` contains "SQL Injection" or "Brute Force".
+
+- **output**: Writes processed log data to an output CSV file.
